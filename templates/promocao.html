@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../static/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoção</title>
+</head>
+<body>
+
+    {% include "drawer.html" %}
+    
+    <div class="main-content">
+        <H1>Promoção</H1>
+        <br>
+        {% if linhas|length != 0 %}
+        {% for linha in linhas %}
+        <h3>{{linha[1]}}</h3>
+        
+            <div class="container">
+                <a href=https://www.{{linha[5]}}></a>
+                    <h5>Promoção começou/começará no dia {{linha[6]}}</h5>
+                    <br>
+                    {{linha[2]}}
+                    <br>
+                    Prêmio: {{linha[3]}}
+                    <br><br>
+                    <div class="requisitos">
+                        <h5>Para participar</h5>
+                        {{linha[4]}}
+                        <br>
+                        <strong>Resultado será anunciado no dia {{linha[7]}}</strong>
+                    </div>
+                </a>
+                <br>
+                <a href="/editar_promocao/{{linha[0]}}"><button class="btn"><i class="fas fa-edit"></i> Editar</button></a>
+                <a href="/deletar_promocao/{{linha[0]}}"><button class="btn"><i class="fa fa-trash"></i> Deletar</button></a>
+            </div>
+       
+        <br>
+        {% endfor %}
+        {% else %}
+        <br>
+        <h2>Nenhuma promoção cadastrado</h2>
+        <br>
+        {% endif %}
+        <h3>Cadastrar promoção</h3>
+            <a href="{{url_for('cadastro_promocao')}}"><button class="btn"><i class="fa fa-plus"></i> Cadastrar</button></a>
+   </div>
+</body>
+</html>

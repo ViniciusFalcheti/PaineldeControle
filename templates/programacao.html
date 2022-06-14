@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="../static/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação</title>
+</head> 
+<body>
+    {% include "drawer.html" %}
+    <div class="main-content">
+        <h1>Programação</h1>
+        <br>
+        {% for j in range(0,7) %}
+        {% if weekday[j] | length != 0 %}
+        <h3>{{dia_da_semana[j]}}</h3>
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+            {% for i in range(weekday[j]|length) %}
+                {% if i == 0 %}
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{i}}" class="active"></li>
+                {% else %}
+                    <li data-targe t="#carouselExampleIndicators" data-slide-to="{{i}}"></li>
+                {% endif %}
+            {% endfor %}
+            </ol>
+            <div class="carousel-inner div-slider">
+                {% for i in range(weekday[j]|length) %}
+                {% if i == 0 %}
+                <div class="carousel-item active">
+                {% else %}
+                <div class="carousel-item">
+                {% endif %}
+                    <div class="d-block w-100 slider">
+                        <h3>{{weekday[j][i][3]}}</h3>
+                        <p>{{weekday[j][i][4]}}</p>
+                        <div>
+                            <i class="fa fa-clock"></i>
+                            {{weekday[j][i][1]}}
+                            &#9;
+                            <i class="fa fa-clock"></i>
+                            {{weekday[j][i][2]}}
+                        </div>
+                        <a href="/editar_programacao/{{weekday[j][i][0]}}/{{weekday[j][i][1]}}"><button class="btn"><i class="fas fa-edit"></i> Editar</button></a>
+                        <a href="/deletar_programacao/{{weekday[j][i][0]}}/{{weekday[j][i][1]}}"><button class="btn"><i class="fa fa-trash"></i> Deletar</button></a>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+                </a>
+            </div>
+            {% else %}
+            <h5>Nenhum programa cadastrado no(a) {{dia_da_semana[j]}}</h5>
+
+            {% endif %}
+            <br><br>
+            {% endfor %}
+            <h3>Cadastrar programa</h3>
+            <a href="{{url_for('cadastro_programacao')}}"><button class="btn"><i class="fa fa-plus"></i> Cadastrar</button></a>
+        </div>
+</body>
+</html>

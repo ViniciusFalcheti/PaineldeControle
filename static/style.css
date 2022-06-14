@@ -1,0 +1,366 @@
+/* configuraçãoes globais */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css";
+
+:root{
+    --primary-color: #17141f;
+    --nav-size: 250px;
+    --cor-radio: #f08333;
+    --cor-radio2: rgb(131, 74, 41);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', arial, sans-serif;
+    color: bisque;
+    text-align: center;
+    list-style: none;
+    text-decoration: none;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+body{
+   /* background-color: #505050; */
+   background-image: url('../static/bg.jpg');
+   background-size: cover;
+}
+
+h1{
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+h6{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Estilização barra lateral */
+.div-nav{
+    display: flex;
+    position: relative;
+}
+
+.div-nav .sidebar{
+    background: var(--primary-color);
+    color: #fff;
+    position: fixed;
+    width: var(--nav-size);
+    height: 100%;
+    padding: 30px 0;
+}
+
+/* #div-logo-nav{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    display: flex;
+} */
+
+.div-nav #logo-nav{
+    /* border-radius: 50%; */
+    width: 150px;
+    position:fixed;
+    margin: auto;
+    display: block;
+    left: 45px;
+    bottom:0; 
+    transform: translateY(-50%); /* Adicionar os prefixos dos navegadores */
+}
+
+.div-nav .sidebar ul{
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 0px;
+}
+
+.div-nav .sidebar ul li{
+    border-bottom: 2px solid rgba(200,200,200,0.1);
+    padding: 2px 0px;
+}
+
+.div-nav .sidebar ul li:first-of-type{
+    border-bottom: 2px solid rgba(200,200,200,0.1);
+    padding: 0px 0px;
+}
+
+.div-nav .sidebar ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.div-nav .sidebar ul li a:hover{
+    text-decoration: underline;
+    font-weight: 600;
+    color: var(--cor-radio);
+}
+
+/* Estilização home page */
+.main-content{
+    width: 100%;
+    margin-left: var(--nav-size);
+    margin-bottom: 50px;
+}
+
+#video{
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilização contato */
+.container{
+    background-color: var(--primary-color);
+    width: 100px;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+/* Estilização programação */
+.slider{
+    background-color: var(--primary-color);
+    display: inline;
+    width: 600px;
+    height: 300px;
+    text-align: center;
+    align-content: center;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.div-slider{
+    width: 200px;
+}
+
+.main-content .btn{
+    background-color: var(--cor-radio); /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 08px 12px; /* Some padding */
+    font-size: 14px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+}
+  
+  /* Darker background on mouse-over */
+.main-content .btn:hover{
+    background-color: rgb(182, 67, 0);
+    color: #fff;
+}
+
+/* estilização login page */
+#login-body{
+    background-image: url('../static/estudio.jpg');
+    background-size: cover;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+#login-logo{
+        /* border-radius: 50%; */
+        height: 20px;
+        /* margin-right: -50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+}
+
+#login-div{
+    background-color: #fff;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 20vh;
+    border-radius: 20px;
+    text-align: center;
+}
+
+form{
+    margin-top:30px;
+    margin-bottom: 40px;
+}
+
+label, input{
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+label{
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+input{
+    color: var(--primary-color);
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+input:focus{
+    border-bottom: 2px solid var(--cor-radio);
+}
+
+.btn-cadastro{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    margin-top: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-cadastro:hover{
+    background-color: var(--cor-radio);
+    transition: .5s;
+}
+
+#login-button:hover{
+    background-color: var(--cor-radio);
+    transition: .5s;
+}
+
+/* Style buttons */
+.container .btn{
+    background-color: var(--cor-radio); /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 08px 12px; /* Some padding */
+    font-size: 14px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+}
+  
+  /* Darker background on mouse-over */
+.container .btn:hover {
+    background-color: var(--cor-radio2);
+    color: #fff;
+}
+
+/* cadastro de programação */
+.cadastro-div{
+    background-color: #fff;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 10vh;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.programacao{
+    margin-top: 3vh; 
+}
+
+.contato{
+    margin-top: 20vh;
+}
+
+.promocao{
+    margin-top: 5vh;
+}
+
+.titulo-cadastro{
+    color: var(--primary-color);
+}
+
+.cadastro-body{
+    background-image: url('../static/bg2.jpg');
+    background-size: cover;
+}
+
+.form-check-input:checked{
+    background-color: var(--cor-radio);
+  }
+
+textarea{
+    color: var(--primary-color);
+}
+
+textarea[placeholder]
+{
+    text-align: left;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.erro{
+    color: red;
+}
+
+.flash{
+    color: var(--primary-color);
+}
+
+.requisitos{
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    border-radius: 20px;
+    border: 1px solid var(--cor-radio);
+    background-color: var(--primary-color);
+
+}
+
+.requisitos h5{
+    text-align: left;
+    color: var(--cor-radio);
+}
+
+.divsobre{
+    align-items: center;
+    text-align: center;
+    width: 850px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgb(255, 255, 255);
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.integrantes{
+    display: flex;
+    justify-content: space-around;
+}
+
+.integrante1{
+    display: inline-block;
+}
+
+.integrante2{
+    display: inline-block;
+}
+
+.objetivos ul{
+    list-style-position: inside;
+    list-style-type: "\1F44D";
+}
+
+.objetivos ul li{
+    list-style-position: inside;
+    list-style-type: "circle"; 
+    list-style-type:none;
+    padding-left: 0pt;
+    text-align: left;
+    margin: 20px;
+}

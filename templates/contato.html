@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../static/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+</head>
+<body>
+
+    {% include "drawer.html" %}
+    
+    <div class="main-content">
+        <H1>Contato</H1>
+
+        {% if linhas|length != 0 %}
+        {% for linha in linhas %}
+        
+            <div class="container">
+                <a href=https://www.{{linha[3]}}></a>
+                    <h6>{{linha[1]}}</h6>
+                    {{linha[2]}}
+                </a>
+                <br>
+                <a href="/editar_contato/{{linha[0]}}"><button class="btn"><i class="fas fa-edit"></i> Editar</button></a>
+                <a href="/deletar_contato/{{linha[0]}}"><button class="btn"><i class="fa fa-trash"></i> Deletar</button></a>
+            </div>
+       
+        <br>
+        {% endfor %}
+        {% else %}
+        <br>
+        <h2>Nenhum contato cadastrado</h2>
+        <br>
+        {% endif %}
+        <h3>Cadastrar contato</h3>
+            <a href="{{url_for('cadastro_contato')}}"><button class="btn"><i class="fa fa-plus"></i> Cadastrar</button></a>
+   </div>
+</body>
+</html>

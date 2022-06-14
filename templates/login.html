@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="../static/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body id="login-body">
+        <div id="login-div">
+            <!-- <img src="/assets/logo.png" alt="logo" id="login-logo"> -->
+            <form action="/login" method="POST">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="Digite seu e-mail" autocomplete="on" value="{{
+                    request.form.email }}"> 
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password" placeholder="Digite sua senha" autocomplete="off" value="{{
+                    request.form.password }}"> 
+                <input type="submit" value="Login" id="login-button" class="btn-cadastro">
+            </form>
+            {% if erro %}
+                <h3 class="erro">Email ou senha incorretos</h3>
+            {% endif %}
+        </div>
+
+</body>
+</html>
